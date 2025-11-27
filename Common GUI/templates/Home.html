@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepfake Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <main class="container">
+        <section class="hero">
+            <h1>Deepfake Detection</h1>
+            <p>Advanced AI-powered tools to verify the authenticity of digital media. Detect manipulated images, audio,
+                and videos with state-of-the-art models.</p>
+        </section>
+
+        <div class="features-grid">
+            <a href="/image" class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-image"></i>
+                </div>
+                <h3>Image Detection</h3>
+                <p>Analyze images to detect AI-generated faces and artifacts using DenseNet technology.</p>
+            </a>
+
+            <a href="/audio" class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-microphone-lines"></i>
+                </div>
+                <h3>Audio Detection</h3>
+                <p>Identify cloned voices and synthetic speech patterns using advanced audio transformers.</p>
+            </a>
+
+            <a href="/video" class="feature-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3>Video Detection</h3>
+                <p>Scan videos frame-by-frame to spot temporal inconsistencies and facial manipulation.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Deepfake Detection System. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

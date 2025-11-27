@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analysis Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <main class="container">
+    <div class="result-card">
+      <div class="result-header">
+        <h2>Analysis Complete</h2>
+        <p style="color: var(--text-muted);">Here are the findings from our AI models.</p>
+      </div>
+
+      <div class="result-content">
+        {% if "Fake" in result or "Spoof" in result %}
+        <div class="status-badge status-fake">
+          <i class="fas fa-exclamation-triangle"></i> DETECTED FAKE
+        </div>
+        {% else %}
+        <div class="status-badge status-real">
+          <i class="fas fa-check-circle"></i> AUTHENTIC MEDIA
+        </div>
+        {% endif %}
+
+        <h3 style="margin-bottom: 1rem;">{{ result }}</h3>
+
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">
+          Our model has analyzed the uploaded media for artifacts, inconsistencies, and manipulation patterns.
+        </p>
+
+        <a href="/" class="btn-primary" style="text-decoration: none; display: inline-block;">
+          <i class="fas fa-redo"></i> Analyze Another
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Deepfake Detection System</p>
+  </footer>
+</body>
+
+</html>

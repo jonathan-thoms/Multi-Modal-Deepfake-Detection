@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <main class="container">
+        <div style="margin-bottom: 2rem;">
+            <a href="/" style="text-decoration: none; color: var(--text-muted); font-weight: 500;">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+
+        <div class="upload-container">
+            <div class="icon-wrapper">
+                <i class="fas fa-image"></i>
+            </div>
+            <h2>Analyze Image</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Upload an image to check for AI manipulation.</p>
+
+            <form action="/upload-image" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="option" value="image">
+
+                <div class="upload-area" id="drop-area">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <p><strong>Click to upload</strong> or drag and drop</p>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">JPG, PNG supported</p>
+                    <input type="file" name="file" class="file-input" accept="image/*" required
+                        onchange="updateFileName(this)">
+                </div>
+
+                <p id="file-name" style="margin-bottom: 1rem; font-weight: 500; color: var(--primary-color);"></p>
+
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-search"></i> Analyze Now
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Deepfake Detection System</p>
+    </footer>
+
+    <script>
+        function updateFileName(input) {
+            const fileName = input.files[0]?.name;
+            if (fileName) {
+                document.getElementById('file-name').textContent = "Selected: " + fileName;
+            }
+        }
+    </script>
+</body>
+
+</html>

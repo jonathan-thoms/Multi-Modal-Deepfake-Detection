@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project specific
+uploads/
+combined-real-and-fake-faces/
+dataset/
+*.h5
+*.keras
+*.safetensors
+*.pth
+*.pt
+*.onnx
+models/
